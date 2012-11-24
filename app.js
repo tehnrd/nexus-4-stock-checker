@@ -1,6 +1,9 @@
 var request = require('request');
-var twilio = require('request');
-var settings = require('./settings');
+
+//If deployed on heroku, don't load the settings, environment vars will be used
+if(process.env.DEPLOYMENT_LOCATION != 'heroku'){
+	var settings = require('./settings');
+}
 
 //Twilio variables, try to use enviroment variables first, then settings file
 var twilioAccountSid = process.env.TWILIO_ACCOUNT_SID || settings.twilioAccountSid;
