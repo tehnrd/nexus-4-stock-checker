@@ -25,7 +25,7 @@ function checkStock(){
 			var now = new Date();
 			
 			//Attempt to find the sold out element on the page
-			if(body.indexOf('hardware-sold-out') < -1){
+			if(body.indexOf('hardware-sold-out') > -1){
 				console.log('Still sold out as of ' + now);
 			
 			}else if(now - dateTimeSMSsent < 21600000){
