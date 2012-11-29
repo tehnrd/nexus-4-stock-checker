@@ -34,3 +34,5 @@ To run locally execute the following command in the main project directory.
 
 To run on Heroku be sure the environment variables above are set in your app. If running on Heroku you also need to create an environment variable named DEPLOYMENT_LOCATION and the value should be 'heroku'. This will prevent the app from attempting to load the settings.js file as it is not included in the git repository and won't be present when deployed to Heroku.
 
+## Bumper Branch ##
+There is also a branch that checks for availability of the Nexus 4 bumper. All setup instuctions are the same.

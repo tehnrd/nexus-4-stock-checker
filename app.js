@@ -18,7 +18,7 @@ var dateTimeSMSsent;
 function checkStock(){
 
 	//Peform a GET to retrive HTML from the google play Nexus 4 page
-	request('https://play.google.com/store/devices/details?id=nexus_4_16gb', function (error, response, body) {
+	request('https://play.google.com/store/devices/details/Nexus_4_Bumper_Black?id=nexus_4_bumper_black', function (error, response, body) {
 	
 		if (!error && response.statusCode == 200) {
 			//Get the current time
@@ -26,7 +26,7 @@ function checkStock(){
 			
 			//Attempt to find the sold out element on the page
 			if(body.indexOf('hardware-sold-out') > -1){
-				console.log('Still sold out as of ' + now);
+				console.log('Bumper still sold out as of ' + now);
 			
 			}else if(now - dateTimeSMSsent < 21600000){
 				//SMS was already sent withing the past 6 hours, don't send again
@@ -40,7 +40,7 @@ function checkStock(){
 				var params = {
 					From: twilioFromPhoneNumber,
 					To: toPhoneNumber,
-					Body: 'Nexus 4 16GB in stock! https://play.google.com/store/devices/details?id=nexus_4_16gb'
+					Body: 'Nexus 4 Bumper in stock! https://play.google.com/store/devices/details/Nexus_4_Bumper_Black?id=nexus_4_bumper_black'
 				};
 				
 				//Create auth header
